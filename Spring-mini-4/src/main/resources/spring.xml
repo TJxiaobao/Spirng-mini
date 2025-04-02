@@ -1,0 +1,10 @@
+<beans>
+
+    <bean id="userDao" class="cn/xiaobao/springmini1/core/io/ClassPathResource.java"/>
+
+    <bean id="userService" class="cn.bugstack.springframework.test.bean.UserService">
+        <property name="uId" value="10001"/>
+        <property name="userDao" ref="userDao"/>
+    </bean>
+
+</beans>
