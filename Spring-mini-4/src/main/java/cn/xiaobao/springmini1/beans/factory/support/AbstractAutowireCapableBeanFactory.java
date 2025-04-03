@@ -75,4 +75,9 @@ public class AbstractAutowireCapableBeanFactory extends AbstractBeanFactory{
     public InstantiationStrategy getInstantiationStrategy() {
         return instantiationStrategy;
     }
+
+    @Override
+    public <T> T getBean(String name, Class<T> requiredType) {
+        return null;
+    }
 }
