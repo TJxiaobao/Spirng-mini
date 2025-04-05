@@ -1,0 +1,10 @@
+<beans>
+
+    <bean id="userDao" class="Spring-mini-4/src/test/java/cn/xiaobao/springmini1/UserDao.java"/>
+
+    <bean id="userService" class="Spring-mini-4/src/test/java/cn/xiaobao/springmini1/UserService.java">
+        <property name="uId" value="10001"/>
+        <property name="userDao" ref="userDao"/>
+    </bean>
+
+</beans>
