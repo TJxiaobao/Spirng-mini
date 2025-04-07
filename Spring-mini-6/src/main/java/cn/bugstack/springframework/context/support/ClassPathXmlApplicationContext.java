@@ -1,10 +1,22 @@
-package cn.xiaobao.springmini1.context.support;
+package cn.bugstack.springframework.context.support;
 
-import cn.hutool.core.util.StrUtil;
-import org.springframework.beans.BeansException;
+import cn.bugstack.springframework.beans.BeansException;
 
-import java.util.Map;
-
+/**
+ * Standalone XML application context, taking the context definition files
+ * from the class path, interpreting plain paths as class path resource names
+ * that include the package path (e.g. "mypackage/myresource.txt"). Useful for
+ * test harnesses as well as for application contexts embedded within JARs.
+ * <p>
+ * XML 文件应用上下文
+ * <p>
+ *
+ *
+ *
+ *
+ *
+ * 作者：DerekYRC https://github.com/DerekYRC/mini-spring
+ */
 public class ClassPathXmlApplicationContext extends AbstractXmlApplicationContext {
 
     private String[] configLocations;
@@ -34,22 +46,7 @@ public class ClassPathXmlApplicationContext extends AbstractXmlApplicationContex
 
     @Override
     protected String[] getConfigLocations() {
-        return this.configLocations;
+        return configLocations;
     }
 
-    /**
-     * 处理配置路径
-     * @param location 原始配置路径
-     * @return 处理后的配置路径
-     */
-    protected String resolvePath(String location) {
-        if (StrUtil.isEmpty(location)) {
-            return location;
-        }
-        // 如果路径以classpath:开头，去掉这个前缀
-        if (location.startsWith("classpath:")) {
-            return location.substring("classpath:".length());
-        }
-        return location;
-    }
 }
